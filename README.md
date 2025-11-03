@@ -1,4 +1,4 @@
-# Fallen-Pedestrians
+# The-Fallen-Pedestrians
 An anomaly detection Variational Autoencoder (VAE) model to identify unusual pedestrians in the scene.
 
 # Description
@@ -18,7 +18,7 @@ The following is how samples from the dataset appear
 # Model and Training
 A Variational Autoencoder (VAE) is employed to model pedestrian pose and bounding box features, capturing structural information such as bone angles and limb lengths.
 
-![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_model.png?raw=true)
+![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_model.png?raw=true | width=200)
 
 The input feature vector **x** encodes:
 
