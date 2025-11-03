@@ -94,4 +94,5 @@ We visualize the learned latent representations ($$\mu$$) using **Principal Comp
 
 <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/latent_mu.png?raw=true" width="520">
 
+<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/confusion_matrix.png?raw=true" width="520">
 
