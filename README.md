@@ -93,3 +93,5 @@ To evaluate our model, we used approximately **1.2k non-anomalous** and **1.2k a
 We visualize the learned latent representations ($$\mu$$) using **Principal Component Analysis (PCA)**, comparing the distributions of normal and anomalous data in the latent space.
 
 <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/latent_mu.png?raw=true" width="520">
+
+
