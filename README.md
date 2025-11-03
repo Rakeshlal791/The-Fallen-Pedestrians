@@ -14,7 +14,7 @@ Our dataset class returns a per-instance bounding box and normalized pose keypoi
 
 The following is how samples from the dataset appear
 
-![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/ped_samples.png?raw=true|width=50)
+<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/ped_samples.png?raw=true" width="520">
 
 # Model and Training
 A Variational Autoencoder (VAE) is employed to model pedestrian pose and bounding box features, capturing structural information such as bone angles and limb lengths.
