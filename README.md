@@ -2,9 +2,9 @@
 An anomaly detection Variational Autoencoder (VAE) model to identify unusual pedestrians in the scene.
 
 # Description
-Identifying anomalous pedestrian behavior is a crucial task for autonomous driving, robotic navigation, and pedestrian safety in general.
+Pedestrians may adopt unusual positions due to various reasons, such as medical emergencies, accidents, or disorientation. These individuals face a heightened risk of accidents because of their limited mobility and reduced situational awareness. Detecting such anomalous pedestrians is therefore critical for autonomous driving systems, robotic navigation, and pedestrian safety.
 
-In this work, we define pedestrians with unusual poses—such as those in fallen or lying-down positions, which deviate from normal upright walking or standing poses—as anomalous in traffic scenarios.
+In this work, we define anomalous pedestrians as those exhibiting atypical body poses—such as fallen or lying-down positions—that deviate from normal upright walking or standing postures in traffic environments.
 
 # Dataset
 We trained the VAE model on the [European City Person (ECP)](https://https://eurocity-dataset.tudelft.nl/) dataset to learn the latent distribution of normal pedestrians.
@@ -88,11 +88,37 @@ Below are some examples of our synthetic pedestrians for each anomalous category
 ---
 
 ## Results
-
 To evaluate our model, we used approximately **1.2k non-anomalous** and **1.2k anomalous** pedestrian samples.  
 We visualize the learned latent representations ($$\mu$$) using **Principal Component Analysis (PCA)**, comparing the distributions of normal and anomalous data in the latent space.
 
+### Anomaly Score
+The anomaly score for each sample is computed as the **weighted mean reconstruction error** of each feature (head, left limb, right limb, torso, left leg, right leg, bounding box width, and height):
+
+$$\text{score}_i = \frac{1}{D} \sum_{d=1}^{D} w_d \big| x_{i,d} - \hat{x}_{i,d} \big|$$
+
+where:
+- $$D$$ — total number of feature dimensions (44)  
+- $$w_d$$ — region-wise weight for the $$d^{th}$$ feature  
+- $$x_{i,d}$$ — original feature value  
+- $$\hat{x}_{i,d}$$ — reconstructed feature value  
+
+Higher scores indicate poses that deviate more strongly from the learned “normal” distribution.
+
 <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/latent_mu.png?raw=true" width="520">
 
+We compute the appropriate threshold for anomaly score from the AUC and report the following metrics on model performance.
+
+| Metric | Value |
+|-----------|-----------|
+| **Precision** | 0.994 |
+| **Recall** | 0.992 |  
+| **F1** | 0.993 |  
+| **AUC** | 0.998 |
+
+---
+### Confusion Matrix
 <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/confusion_matrix.png?raw=true" width="520">
+
+### Anomaly Score
+<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_score.png?raw=true" width="520">
 
