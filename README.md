@@ -67,16 +67,29 @@ $$
 
 After training on normal pedestrian poses, anomalous poses (e.g., fallen or lying pedestrians) are identified as samples with **high reconstruction error** or **low likelihood** under the learned latent distribution.
 
-# Results
+# Test Data Generation
 We utilized a small subset of the validation split, excluded from training, to obtain representative samples of normal pedestrian behavior. To evaluate anomaly detection performance, we generated synthetic images representing five atypical pedestrian postures: sitting, lying, crawling, bending/leaning, and imbalanced positions.
 
 ## Synthetic Data
 We generated synthetic anomalous scenarios using [Gemini 2.5 Flash Image (Nano Banana)](https://aistudio.google.com/models/gemini-2-5-flash-image) by performing inpainting to introduce fallen pedestrians into selected images from the test dataset. Any visual artifacts produced during synthesis were manually corrected using the GNU Image Manipulation Program (GIMP). Finally, we annotated the pose keypoints and bounding boxes for each anomalous pedestrian.
 
-The following are some examples of our synthetic pedestrians for each anomalous category.
+We generated approximately 50 synthetic test images per category, annotated, and applied small Gaussian perturbations to pose keypoints, introducing subtle variations that better capture real-world posture diversity.
 
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/syn_sitting.png?raw=true" width="520">
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/syn_bending.png?raw=true" width="520">
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/syn_crawling.png?raw=true" width="520">
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/syn_lying.png?raw=true" width="520">
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/ped_imabalanced.png?raw=true" width="520">
+Below are some examples of our synthetic pedestrians for each anomalous category.
+
+| Category | Examples |
+|-----------|-----------|
+| **Sitting** | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/sitting_row.png?raw=true" width="520"> |
+| **Bending** | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/bending_row.png?raw=true" width="520"> |
+| **Crawling** | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/crawling_row.png?raw=true" width="520"> |
+| **Lying** | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/lying_row.png?raw=true" width="520"> |
+| **Imbalanced** | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/imbalanced_row.png?raw=true" width="520"> |
+
+---
+
+## Results
+
+To evaluate our model, we used approximately **1.2k non-anomalous** and **1.2k anomalous** pedestrian samples.  
+We visualize the learned latent representations ($$\mu$$) using **Principal Component Analysis (PCA)**, comparing the distributions of normal and anomalous data in the latent space.
+
+<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/latent_mu.png?raw=true" width="520">
