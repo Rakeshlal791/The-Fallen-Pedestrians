@@ -13,12 +13,12 @@ We trained the VAE model on the [European City Person (ECP)](https://https://eur
 Our dataset class returns a per-instance bounding box and normalized pose keypoints for training.
 
 The following is how samples from the dataset appear
-![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/ped_samples.png?raw=true)
+![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/ped_samples.png?raw=true|width=100)
 
 # Model and Training
 A Variational Autoencoder (VAE) is employed to model pedestrian pose and bounding box features, capturing structural information such as bone angles and limb lengths.
 
-![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_model.png?raw=true | width=100)
+![alt text](https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_model.png?raw=true)
 
 The input feature vector **x** encodes:
 
