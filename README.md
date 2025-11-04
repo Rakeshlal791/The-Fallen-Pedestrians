@@ -116,9 +116,9 @@ We compute the appropriate threshold for anomaly score from the AUC and report t
 | **AUC** | 0.998 |
 
 ---
-### Confusion Matrix
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/confusion_matrix.png?raw=true" width="520">
+| Confusion Matrix | Anomaly Score distribution |
+|-----------|-----------|
+| <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/confusion_matrix.png?raw=true" height="500"> | <img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_score.png?raw=true" height="500"> |
 
-### Anomaly Score
-<img src="https://github.com/Rakeshlal791/The-Fallen-Pedestrians/blob/main/images/vae_score.png?raw=true" width="520">
+---
 
